@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Render HTML Forms</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!--main style file-->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container" id="title">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm display-4 text-center">Render HTML Forms</div>
+        </div>
+      </div>
+      <div class="container" id="app">
+        <div class="row">
+          <div class="col-sm" id="input">
+            <form>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">JSON Input</label>
+                <textarea class="form-control" id="json-input" rows="20">
+      {
+        "name": {
+          "type": "text",
+          "label": "Name",
+          "placeholder": "text field"
+        },
+        "description": {
+          "type": "textarea",
+          "label": "Description",
+          "placeholder": "text area"
+        },
+        "istrue": {
+          "type": "checkbox",
+          "label": "checkbox"
+        },
+        "choose": {
+          "type": "select",
+          "label": "Choose",
+          "options": ["choice 1", "choice 2", "choice 3"]
+        },
+        "submit": {
+            "type": "submit",
+            "text": "Add"
+          
+          }
+         }
+                  </textarea
+                >
+              </div>
+            </form>
+          </div>
+          <div class="col-sm">
+            <div class="row">Resulting Form</div>
+            <div class="row">
+              <div class="col-sm" id="output"></div>
+            </div>
+          </div>
+        </div>
+        <button
+          type="button"
+          class="btn btn-primary submit"
+          onclick="drawForm($('#json-input').val(), '#output')"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custome.js"></script>
+  </body>
+</html>
